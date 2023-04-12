@@ -1,7 +1,9 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddBlog = () => {
   const [formData, setFormData] = useState({ title: "", description: "" });
+  const navigate = useNavigate();
   const addData = async () => {
     const response = await fetch("http://localhost:5000/api/blog/", {
       method: "POST",
@@ -13,6 +15,7 @@ const AddBlog = () => {
     });
     const jsonData = await response.json();
     console.log("addblog", jsonData);
+    navigate("/");
   };
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
