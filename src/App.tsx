@@ -1,10 +1,14 @@
-import React from 'react'
-import Home from './components/Home'
+import React from "react";
+import Home from "./components/Home";
+import AddBlog from "./components/AddBlog";
 
 const App = () => {
   return (
-    <Home/>
-  )
-}
+    <div className="container-fluid">
+      <AddBlog />
+      <Home />
+    </div>
+  );
+};
 
-export default App
+export default App;
